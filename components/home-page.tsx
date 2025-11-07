@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Footer } from "@/components/footer"
 import {
   Heart,
   Plane,
@@ -30,7 +31,7 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-red-950 dark:via-gray-900 dark:to-red-950 py-20 px-6">
         <div className="absolute inset-0 overflow-hidden">
@@ -69,7 +70,7 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <Button
                   variant="outline"
                   size="lg"
-                  className="px-8 py-6 text-lg rounded-xl border-gray-300 dark:border-gray-700"
+                  className="px-8 py-6 text-lg rounded-xl border-gray-300 dark:border-gray-700 bg-transparent"
                   onClick={() => {
                     const platformSection = document.getElementById("platform-overview")
                     platformSection?.scrollIntoView({ behavior: "smooth" })
@@ -174,7 +175,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Real-time operations center with comprehensive monitoring, alerts, and multi-language support.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("dashboard")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("dashboard")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -205,7 +210,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                   GPS-enabled tracking, battery management, and AI-powered route optimization for the entire drone
                   fleet.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("drones")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("drones")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${activeSection === "drones" ? "rotate-180" : "rotate-0"}`}
@@ -233,7 +242,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Seamless connection with 181+ hospitals, capacity monitoring, and emergency contact management.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("hospitals")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("hospitals")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -263,7 +276,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Instant ordering, smart matching, and priority queue management for all blood requests.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("requests")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("requests")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -293,7 +310,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Multi-hub inventory tracking, blood type management, and temperature-controlled storage.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("inventory")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("inventory")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -323,7 +344,11 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Machine learning capabilities for demand prediction, route optimization, and predictive analytics.
                 </p>
-                <Button variant="outline" className="w-full justify-between" onClick={() => toggleSection("ai")}>
+                <Button
+                  variant="outline"
+                  className="w-full justify-between bg-transparent"
+                  onClick={() => toggleSection("ai")}
+                >
                   Learn More
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${activeSection === "ai" ? "rotate-180" : "rotate-0"}`}
@@ -548,36 +573,7 @@ export function HomePage({ onEnterDashboard }: { onEnterDashboard: () => void })
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-                <Heart className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-xl">CrimsonWings</span>
-            </div>
-            <div className="flex gap-6">
-              <Button variant="ghost" size="sm">
-                About
-              </Button>
-              <Button variant="ghost" size="sm">
-                Contact
-              </Button>
-              <Button variant="ghost" size="sm">
-                Privacy
-              </Button>
-              <Button variant="ghost" size="sm">
-                Terms
-              </Button>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 CrimsonWings. All rights reserved.</p>
-            <p className="mt-2">In Partnership with Lagos State Blood Transfusion Services</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

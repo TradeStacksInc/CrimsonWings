@@ -8,6 +8,7 @@ import { HospitalRequests } from "@/components/hospital-requests"
 import { HubInventory } from "@/components/hub-inventory"
 import { AIRecommendations } from "@/components/ai-recommendations"
 import { OrderModal } from "@/components/order-modal"
+import { Footer } from "@/components/footer"
 import { DronesPage } from "@/components/pages/drones-page"
 import { HospitalsPage } from "@/components/pages/hospitals-page"
 import { RequestsPage } from "@/components/pages/requests-page"
@@ -92,7 +93,9 @@ export function Dashboard() {
   }
 
   return (
-    <div className={`min-h-screen ${isDisasterMode ? "bg-red-950" : "bg-background"} transition-colors duration-300`}>
+    <div
+      className={`min-h-screen ${isDisasterMode ? "bg-red-950" : "bg-background"} transition-colors duration-300 flex flex-col`}
+    >
       {/* Disaster Mode Banner */}
       {isDisasterMode && (
         <div className="bg-red-600 text-white px-4 py-2 text-center font-semibold animate-pulse">
@@ -115,6 +118,8 @@ export function Dashboard() {
       </div>
 
       <OrderModal isOpen={isOrderModalOpen} onClose={() => setIsOrderModalOpen(false)} />
+
+      <Footer />
     </div>
   )
 }
